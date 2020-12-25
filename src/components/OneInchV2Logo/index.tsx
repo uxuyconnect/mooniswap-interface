@@ -5,8 +5,9 @@ import styled from 'styled-components'
 
 import WhiteLogo from '../../assets/svg/logo_white.svg'
 import BlueLogo from '../../assets/svg/logo_blue.svg'
+import V2LogoImg from '../../assets/svg/logo_v2.svg'
 
-const UniIcon = styled.div<{ mobile?: boolean }>`
+const V2Icon = styled.div<{ mobile?: boolean }>`
   width: 150px;
   margin: 0 auto;
   
@@ -28,12 +29,12 @@ const UniIcon = styled.div<{ mobile?: boolean }>`
   }
 `
 
-export default function Logo({mobile, ...rest}: {mobile?: boolean }) {
+export default function V2Logo({mobile, ...rest}: {mobile?: boolean }) {
   const [isDark] = useDarkModeManager();
 
   return (
-    <UniIcon mobile={mobile}>
-      <img src={isDark ? WhiteLogo : BlueLogo} alt="logo" />
-    </UniIcon>
+    <V2Icon mobile={mobile}>
+      <img src={isDark ? V2LogoImg : V2LogoImg} alt="logo" />
+    </V2Icon>
   )
 }
