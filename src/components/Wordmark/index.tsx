@@ -7,7 +7,6 @@ import { Text } from 'rebass'
 import Modal from '../Modal'
 import { X } from 'react-feather'
 import V2Logo from '../OneInchV2Logo'
-import { useLocalStorage } from '../../hooks/useLocalStorage'
 
 const ModalContentWrapper = styled.div`
   display: flex;
@@ -89,37 +88,20 @@ const StyledCloseIcon = styled(X)`
   }
 `
 
-const TextCenter = styled.p`
-  flex: 1 1 auto;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin: 0 0.5rem 0 0.25rem;
-  font-size: 1rem;
-  width: fit-content;
-  font-weight: 500;
-`
-
-function useForceUpdate(){
-  const [value, setValue] = useState(0); // integer state
-  return () => setValue(value => ++value); // update the state to force render
+function useForceUpdate() {
+  const [value, setValue] = useState(0) // integer state
+  console.log(value)
+  return () => setValue(value => ++value) // update the state to force render
 }
 
-export default function Wordmark2() {
-  const setShowLangDialog = (x: boolean) => {
-  }
+export default function Wordmark() {
 
-  // const [notificationWasShown, setNotificationWasShown]
-  //   = useLocalStorage('notificationWasShown', '0');
+  const forceUpdate = useForceUpdate()
 
-  // const [showLangDialog, setShowLangDialog] = useState(false)
-  // const hide = d
-  const forceUpdate = useForceUpdate();
-
-  let notificationWasShown = localStorage.getItem('v2notificationWasShown');
+  let notificationWasShown = localStorage.getItem('v2notificationWasShown')
   const setNotificationWasShown = () => {
-    localStorage.setItem('v2notificationWasShown', 'true');
-    forceUpdate();
+    localStorage.setItem('v2notificationWasShown', 'true')
+    forceUpdate()
   }
 
   return (
@@ -129,7 +111,7 @@ export default function Wordmark2() {
         <ModalContentWrapper style={{ width: '100%' }}>
           <AutoColumn gap="lg" style={{ width: '100%' }}>
             <RowBetween style={{ padding: '0 2rem' }}>
-              <div/>
+              <div />
               <StyledCloseIcon />
             </RowBetween>
             {/*<Break />*/}

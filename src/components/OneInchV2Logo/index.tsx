@@ -2,9 +2,6 @@ import React from 'react'
 import {MEDIA_WIDTHS} from "../../theme";
 import {useDarkModeManager} from "../../state/user/hooks";
 import styled from 'styled-components'
-
-import WhiteLogo from '../../assets/svg/logo_white.svg'
-import BlueLogo from '../../assets/svg/logo_blue.svg'
 import V2LogoImg from '../../assets/svg/logo_v2.svg'
 
 const V2Icon = styled.div<{ mobile?: boolean }>`
