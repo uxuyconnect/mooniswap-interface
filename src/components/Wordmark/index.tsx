@@ -112,7 +112,7 @@ export default function Wordmark() {
           <AutoColumn gap="lg" style={{ width: '100%' }}>
             <RowBetween style={{ padding: '0 2rem' }}>
               <div />
-              <StyledCloseIcon />
+              <StyledCloseIcon onClick={() => setNotificationWasShown()} />
             </RowBetween>
             {/*<Break />*/}
             <div style={{ overflow: 'auto', height: 500 }}>

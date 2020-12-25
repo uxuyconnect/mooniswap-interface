@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import Wordmark from '../components/Wordmark'
 import Logo from "../components/Logo";
 import styled from 'styled-components'
 import UnicornSvg from '../components/UnicornSvg'
@@ -31,9 +30,9 @@ export default function AppBody({ children, disabled }: { children: React.ReactN
   const [highlight, setHighlight] = useState<boolean>(false);
 
   return <HeadersPlusBodyWrapper>
-    <div className="onlyDesktop" onMouseEnter={() => setHighlight(true)} onMouseLeave={() => setHighlight(false)}>
+    <div className="onlyDesktop" style={{ paddingBottom: '2rem' }}
+         onMouseEnter={() => setHighlight(true)} onMouseLeave={() => setHighlight(false)}>
       <Logo/>
-      <Wordmark />
     </div>
     <UnicornSvg highlight={highlight} />
     <UnicornSvg highlight={highlight} flip={true} />

@@ -3,6 +3,7 @@ import {MEDIA_WIDTHS} from "../../theme";
 import {useDarkModeManager} from "../../state/user/hooks";
 import styled from 'styled-components'
 import V2LogoImg from '../../assets/svg/logo_v2.svg'
+import V2LogoImgWhite from '../../assets/svg/logo_v2_white.svg'
 
 const V2Icon = styled.div<{ mobile?: boolean }>`
   width: 150px;
@@ -31,7 +32,7 @@ export default function V2Logo({mobile, ...rest}: {mobile?: boolean }) {
 
   return (
     <V2Icon mobile={mobile}>
-      <img src={isDark ? V2LogoImg : V2LogoImg} alt="logo" />
+      <img src={isDark ? V2LogoImgWhite : V2LogoImg} alt="logo" />
     </V2Icon>
   )
 }
