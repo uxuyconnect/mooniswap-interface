@@ -328,4 +328,4 @@ yarn build
 ![DEMO](./uxuyWallet-4048a49b06.gif)
 
 ##### 9 总结
-我们期待@Web3React 能加入UxuyWallet的支持，这样swap在TG 这样mooniswap 可以直接部署到 telegram miniapp中去，用户在小程序中的交易体验，将会更加丝滑。
+We look forward to @Web3React adding support for UxuyWallet, so that swap can be directly deployed to the Telegram mini-app, and the user's trading experience in the mini-app will be smoother.
