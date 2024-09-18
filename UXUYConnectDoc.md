@@ -239,7 +239,8 @@ Add operation judgment for the account, as some wallets have connect and disconn
 ```
 
 ##### 7 Handle Some Details, Modify Account Status Wallet Logo Display
-显示的账户用那个钱包连接是带有哪个图标logo的。也在这个文件里加上
+Display the account with the wallet connection and the corresponding icon logo. Also add this in this file.
+
 ``` typescript
 //  Find the getStatusIcon() method, add <img src={UxuyConnectIcon} alt={''} />
 
@@ -327,5 +328,5 @@ yarn build
 
 ![DEMO](./uxuyWallet-4048a49b06.gif)
 
-##### 9 总结
+##### 9 Summary
 We look forward to @Web3React adding support for UxuyWallet, so that swap can be directly deployed to the Telegram mini-app, and the user's trading experience in the mini-app will be smoother.
