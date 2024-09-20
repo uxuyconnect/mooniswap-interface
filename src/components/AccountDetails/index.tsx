@@ -12,9 +12,11 @@ import Transaction from './Transaction'
 import { SUPPORTED_WALLETS } from '../../constants'
 import { ReactComponent as Close } from '../../assets/images/x.svg'
 import { getEtherscanLink } from '../../utils'
-import { injected, walletconnect, walletlink, fortmatic, portis } from '../../connectors'
+import { injected, walletconnect, walletlink, fortmatic, portis, uxuyConnect } from '../../connectors'
 import CoinbaseWalletIcon from '../../assets/images/coinbaseWalletIcon.svg'
 import WalletConnectIcon from '../../assets/images/walletConnectIcon.svg'
+import UxuyConnectIcon from '../../assets/images/uxuyConnectIcon.svg'
+
 import FortmaticIcon from '../../assets/images/fortmaticIcon.png'
 import PortisIcon from '../../assets/images/portisIcon.png'
 import Identicon from '../Identicon'
@@ -248,7 +250,13 @@ export default function AccountDetails({
           <Identicon />
         </IconWrapper>
       )
-    } else if (connector === walletconnect) {
+    } else if (connector === uxuyConnect) {
+      return (
+        <IconWrapper size={16}>
+          <img src={UxuyConnectIcon} alt={''} />
+        </IconWrapper>
+      )
+    } else if(connector === walletconnect) {
       return (
         <IconWrapper size={16}>
           <img src={WalletConnectIcon} alt={''} />
@@ -309,20 +317,25 @@ export default function AccountDetails({
                     <WalletAction
                       style={{ fontSize: '.825rem', fontWeight: 400, marginRight: '8px' }}
                       onClick={() => {
-                        ;(connector as any).close()
+                        if (connector === uxuyConnect) {
+                          connector.deactivate();  // UxuyConnector 使用 deactivate
+                        }else{
+                          (connector as any).close()
+                        }
+                        
                       }}
                     >
                       Disconnect
                     </WalletAction>
                   )}
-                  <WalletAction
+                  {/* <WalletAction
                     style={{ fontSize: '.825rem', fontWeight: 400 }}
                     onClick={() => {
                       openOptions()
                     }}
                   >
                     Change
-                  </WalletAction>
+                  </WalletAction> */}
                 </div>
               </AccountGroupingRow>
               <AccountGroupingRow id="web3-account-identifier-row">

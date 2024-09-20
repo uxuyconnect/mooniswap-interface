@@ -108,6 +108,7 @@
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "@uxuycom/web3-tg-sdk": "^0.0.5",
     "promise-hook": "^0.1.4",
     "react-async-hook": "^3.6.1",
     "react-use-promise": "^0.3.1"

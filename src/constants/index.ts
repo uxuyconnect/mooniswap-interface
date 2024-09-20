@@ -1,6 +1,6 @@
 import { ChainId, ETHER, JSBI, Percent, Token } from '@uniswap/sdk'
 
-import { fortmatic, injected, portis, walletconnect, walletlink } from '../connectors'
+import { fortmatic, injected, portis, walletconnect, uxuyConnect,walletlink } from '../connectors'
 
 export const ROUTER_ADDRESS = '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D'
 
@@ -82,6 +82,15 @@ export const SUPPORTED_WALLETS =
     : {
         ...TESTNET_CAPABLE_WALLETS,
         ...{
+          UXUY_CONNECT: {
+            connector: uxuyConnect,
+            name: 'UxuyConnect',
+            iconName: 'uxuyConnectIcon.svg',
+            description: 'Connect to UxuyConnect..',
+            href: null,
+            color: '#4196FC',
+            mobile: true
+          },
           WALLET_CONNECT: {
             connector: walletconnect,
             name: 'WalletConnect',
