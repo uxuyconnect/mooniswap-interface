@@ -1,0 +1,33 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - feat_telegram  # 或者你的主分支名称
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    #- name: Set up Node.js
+    #  uses: actions/setup-node@v2
+    #  with:
+    #    node-version: '18'  # 或者你的项目所需的 Node.js 版本
+
+    #- name: Install dependencies
+    #  run: yarn install
+
+    #- name: Build project
+    #  run: yarn build
+
+    - name: Publish to Cloudflare Pages
+      uses: cloudflare/pages-action@1
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        projectName: ${{ secrets.CLOUDFLARE_PROJECT_NAME }}
+        directory: './build'  # 或者你的 build 目录的路径
