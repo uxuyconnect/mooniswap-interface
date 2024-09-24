@@ -84,7 +84,7 @@ export const SUPPORTED_WALLETS =
         ...{
           UXUY_CONNECT: {
             connector: uxuyConnect,
-            name: 'UxuyConnect',
+            name: 'UXUY Wallet',
             iconName: 'uxuyConnectIcon.svg',
             description: 'Connect to UxuyConnect..',
             href: null,
