@@ -18,11 +18,11 @@ jobs:
       with:
         node-version: '18'  # 或者你的项目所需的 Node.js 版本
 
-    - name: Install dependencies
-      run: yarn install
+    #- name: Install dependencies
+    #  run: yarn install
 
-    - name: Build project
-      run: yarn build
+    #- name: Build project
+    #  run: yarn build
 
     - name: Publish to Cloudflare Pages
       uses: cloudflare/pages-action@1
